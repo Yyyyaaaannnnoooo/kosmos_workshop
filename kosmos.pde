@@ -10,16 +10,16 @@ void setup() {
 }
 void draw() {
   background(0);
+  for (Star s : stars) {
+    s.update();
+    s.show();
+  }
   moon.show(); 
   if (sp != null) {
     for (SpaceShip SP : sp) {
       SP.update();
       SP.show();
     }
-  }
-  for (Star s : stars) {
-    s.update();
-    s.show();
   }
   if (sp.size() > 50)sp.remove(sp.get(0));
 }
